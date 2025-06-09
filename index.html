@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure & Share Govt Document</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Secure & Share Govt Document with Family Members</h1>
+    </header>
+
+    <section id="auth-section">
+      <div id="register-form" class="auth-form">
+        <h2>Register</h2>
+        <input type="email" id="register-email" placeholder="Email" />
+        <input type="password" id="register-password" placeholder="Password" />
+        <button id="register-btn">Register</button>
+        <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+      </div>
+
+      <div id="otp-verification" class="auth-form" style="display:none;">
+        <h2>Verify OTP</h2>
+        <input type="text" id="otp-code" placeholder="Enter OTP" />
+        <button id="verify-otp-btn">Verify OTP</button>
+      </div>
+
+      <div id="login-form" class="auth-form" style="display:none;">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button id="login-btn">Login</button>
+        <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+      </div>
+    </section>
+
+    <section id="user-section" style="display:none;">
+      <h2>Welcome, <span id="user-email"></span></h2>
+      <button id="logout-btn">Logout</button>
+
+      <div id="upload-doc-section">
+        <h3>Upload Document</h3>
+        <input type="file" id="doc-file" />
+        <button id="upload-doc-btn">Upload</button>
+      </div>
+
+      <div id="docs-list-section">
+        <h3>My Documents</h3>
+        <ul id="docs-list"></ul>
+      </div>
+
+      <div id="share-doc-section" style="display:none;">
+        <h3>Share Document</h3>
+        <input type="email" id="share-email" placeholder="Family Member Email" />
+        <button id="share-doc-btn">Share</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="logger.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
